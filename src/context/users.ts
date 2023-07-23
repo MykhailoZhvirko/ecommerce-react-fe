@@ -1,15 +1,19 @@
 import { createContext } from 'react';
 
-interface IUserContext {
+interface IUser {
   id: number;
   name: string;
   email: string;
 }
 
+interface IUserContext {
+  users: IUser[];
+  setUsers: (users: IUser[]) => void;
+}
+
 const UserContext = createContext<IUserContext>({
-  id: 1,
-  name: 'Leanne Graham',
-  email: 'Sincere@april.biz',
+  users: [],
+  setUsers: () => {},
 });
 
 export default UserContext;
