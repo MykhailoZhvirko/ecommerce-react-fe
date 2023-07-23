@@ -1,17 +1,20 @@
 import { createContext } from 'react';
 
-interface IOrderContext {
+interface IOrder {
   userId: number;
   id: number;
   title: string;
   completed: boolean;
 }
 
+interface IOrderContext {
+  orders: IOrder[];
+  setOrders: (orders: IOrder[]) => void;
+}
+
 const OrderContext = createContext<IOrderContext>({
-  userId: 1,
-  id: 1,
-  title: 'delectus aut autem',
-  completed: false,
+  orders: [],
+  setOrders: () => {},
 });
 
 export default OrderContext;
