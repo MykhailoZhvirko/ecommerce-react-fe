@@ -1,15 +1,19 @@
 import { createContext } from 'react';
 
-interface IProductContext {
+interface IProduct {
   id: number;
   title: string;
   body: string;
 }
 
+interface IProductContext {
+  products: IProduct[],
+  setProducts: (products: IProduct) => void
+}
+
 const ProductContext = createContext<IProductContext>({
-  id: 1,
-  title: 'first product',
-  body: 'body of product',
+  products: [],
+  setProducts: () => {}
 });
 
 export default ProductContext;
